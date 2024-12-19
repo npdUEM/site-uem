@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secretaria Acadêmica Virtual</title>
+    <!-- Adiciona a tag de verificação do Google -->
+    <meta name="google-site-verification" content="Zp0Aa5RGXemescu1BeC2DFI02YCwbEnWV7pdo0zUGLY">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            font-family: "Arial", sans-serif;
+        }
+
+        /* Fundo */
+        .background {
+            background: linear-gradient(to bottom, #4caf50, #9acd32);
+            background-image: url('logo_uem .jpg'); /* Substitua pela imagem exata */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Caixa de login */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            width: 400px;
+            max-width: 90%;
+        }
+
+        .login-box h1 {
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        .forgot-password {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: #388e3c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .forgot-password a:hover {
+            color: #1b5e20;
+        }
+
+        /* Mensagem de erro */
+        .error-message {
+            display: none; /* Oculta a mensagem inicialmente */
+            background-color: #e53935; /* Vermelho */
+            color: #fff; /* Texto branco */
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid #b71c1c; /* Borda vermelha mais escura */
+        }
+
+        /* Rodapé */
+        footer {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            padding: 12px 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="background">
+    <!-- Caixa de Login -->
+    <div class="login-box">
+        <h2>Secretaria Acadêmica Virtual</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <button type="submit" class="login-button">Entrar</button>
+        </form>
+
+        <!-- Mensagem de Erro (Oculta por padrão) -->
+        <div class="error-message" id="error-message">
+            Nosso site está temporariamente suspenso. Retornaremos com todas as atividades no início do ano letivo de 2025. Agradecemos pela compreensão e desejamos a todos um excelente final de ano!
+        </div>
+
+        <p class="forgot-password">Esqueceu sua senha? <a href="#">Clique aqui</a></p>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        Universidade Estadual de Maringá - Secretaria Acadêmica Virtual - Versão 2.0
+    </footer>
+
+    <!-- JavaScript para exibir a mensagem de erro -->
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            const usuario = document.getElementById("usuario").value;
+            const senha = document.getElementById("senha").value;
+
+            // Simula erro ao inserir usuário e senha
+            if (usuario && senha) {
+                const errorMessage = document.getElementById("error-message");
+                errorMessage.style.display = "block"; // Mostra a mensagem de erro
+            }
+        });
+    </script>
+</body>
+</html>
+
